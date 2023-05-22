@@ -1,0 +1,47 @@
+{
+  "name": "guerrillamail",
+  "version": "0.1.0",
+  "description": "guerrillamail API",
+  "main": "lib/index.js",
+  "repository": "https://github.com/pyrosec/guerrillamail",
+  "type": "module",
+  "scripts": {
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:commonjs": "tsc -p tsconfig.commonjs.json",
+    "build": "npm-run-all build:esm build:commonjs",
+    "prettier": "prettier --write ./src.ts/**/*.ts"
+  },
+  "bin": {
+    "guerrillamail": "./bin/guerrillamail.cjs"
+  },
+  "exports": {
+    ".": {
+      "import": "./lib.esm/index.js",
+      "default": "./lib.commonjs/index.js"
+    },
+    "./cli": {
+      "import": "./lib.esm/cli.js",
+      "default": "./lib.commonjs/cli.js"
+    }
+  },
+  "author": "pyrosec",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@types/node": "^20.2.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "change-case": "^4.1.2",
+    "fetch-cookie": "^2.1.0",
+    "fs-extra": "^11.1.1",
+    "https-proxy-agent": "3.0.0",
+    "node-fetch": "2",
+    "socks-proxy-agent": "^8.0.1",
+    "user-agents": "^1.0.1387",
+    "winston": "^3.8.2",
+    "yargs": "^17.7.2"
+  }
+}
