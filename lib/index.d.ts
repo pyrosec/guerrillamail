@@ -1,1 +1,1 @@
-export * from "./guerrillamail";
+export * from "./guerrillamail.js";

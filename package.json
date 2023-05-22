@@ -4,25 +4,12 @@
   "description": "guerrillamail API",
   "main": "lib/index.js",
   "repository": "https://github.com/pyrosec/guerrillamail",
-  "type": "module",
   "scripts": {
-    "build:esm": "tsc -p tsconfig.esm.json",
-    "build:commonjs": "tsc -p tsconfig.commonjs.json",
-    "build": "npm-run-all build:esm build:commonjs",
+    "build": "tsc",
     "prettier": "prettier --write ./src.ts/**/*.ts"
   },
   "bin": {
-    "guerrillamail": "./bin/guerrillamail.cjs"
-  },
-  "exports": {
-    ".": {
-      "import": "./lib.esm/index.js",
-      "default": "./lib.commonjs/index.js"
-    },
-    "./cli": {
-      "import": "./lib.esm/cli.js",
-      "default": "./lib.commonjs/cli.js"
-    }
+    "guerrillamail": "./bin/guerrillamail.js"
   },
   "author": "pyrosec",
   "license": "MIT",

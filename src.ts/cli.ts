@@ -9,8 +9,6 @@ import mkdirp from "mkdirp";
 import path from "path";
 import { getLogger } from "./logger.js";
 
-const args = yargs(process.argv);
-
 const logger = getLogger();
 
 export async function saveSession(
@@ -161,8 +159,8 @@ export async function loadFiles(data: any) {
 }
 
 export async function runCLI() {
-  const [command, ...subquery] = args.argv._.slice(2);
-  const options = Object.assign({}, args.argv);
+  const [command, ...subquery] = yargs.argv._;
+  const options = Object.assign({}, yargs.argv);
   delete options._;
   const data = await loadFiles(
     Object.entries(options).reduce((r, [k, v]) => {

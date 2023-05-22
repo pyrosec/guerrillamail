@@ -17,4 +17,3 @@ export declare function saveSessionAs(name: any): Promise<void>;
 export declare function loadSessionFrom(name: any): Promise<void>;
 export declare function loadFiles(data: any): Promise<any>;
 export declare function runCLI(): Promise<any>;
-//# sourceMappingURL=cli.d.ts.map
