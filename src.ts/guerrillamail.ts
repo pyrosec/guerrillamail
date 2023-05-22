@@ -1,7 +1,6 @@
 import makeFetchCookie from "fetch-cookie";
 import qs from "querystring";
 import UserAgent from "user-agents";
-import HttpsProxyAgent from "https-proxy-agent";
 import { SocksProxyAgent } from "socks-proxy-agent";
 import { getLogger } from "./logger.js";
 import https from "https";
@@ -55,12 +54,7 @@ export class GuerrillaMail {
             proxyOptions.userId + ":" + proxyOptions.password) ||
           null,
       };
-      return new HttpsProxyAgent({
-        ...proxyParams,
-        secure: true,
-        https: true,
-        rejectUnauthorized: !this.insecure,
-      });
+      return null;
     } else return null;
   }
   toObject() {
